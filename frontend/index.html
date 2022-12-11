@@ -13,58 +13,72 @@
 </head>
 
 <body>
-  <header>
-    <div role="navigation" class="navbar">
-      <div style="max-width:1200px;margin:auto;" class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-target="#qwerty"
-            data-toggle="collapse" aria-expanded="false"><img src="/hamb.svg"
-              style="width:30px;color:white;" /></button>
 
-              <div class="navbar-brand">Spanri <p class="visible-xs">&nbsp; Персонажи</p></div>
-        </div>
-        <div class="collapse navbar-collapse" id="qwerty">
-          <ul class="nav navbar-nav navbar-right" style="margin:0;">
-            <li class="menu"><a href="http://vk.com/art_nysha" class="visible-xs">Группа вк автора
-                персонажей</a><a href="http://vk.com/art_nysha" class="hidden-xs"><img src="/vk.svg"
-                  style="width:40px;margin-top:-7px;" title="Группа автора персонажей" /></a></li>
-            <!-- <li class="menu"><a href="../index.html" class="visible-xs">Сайт автора персонажей</a><a
+  <header class="header-wrapper">
+    <div class="header">
+      <div class="header__navbar navbar" role="navigation">
+        <div style="max-width:1200px;margin:auto;" class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-target="#qwerty" data-toggle="collapse"
+              aria-expanded="false"><img src="/hamb.svg" style="width:30px;color:white;" /></button>
+
+            <div class="navbar-brand">Spanri <p class="visible-xs">&nbsp; Персонажи</p>
+            </div>
+          </div>
+
+          <div class="collapse navbar-collapse" id="qwerty">
+            <ul class="nav navbar-nav navbar-right" style="margin:0;">
+              <li class="menu"><a href="http://vk.com/art_nysha" class="visible-xs">Группа вк автора
+                  персонажей</a><a href="http://vk.com/art_nysha" class="hidden-xs"><img src="/vk.svg"
+                    style="width:40px;margin-top:-7px;" title="Группа автора персонажей" /></a></li>
+              <!-- <li class="menu"><a href="../index.html" class="visible-xs">Сайт автора персонажей</a><a
                               href="../index.html" class="hidden-xs"><img src="/earth.svg"
                                   style="width: 32px;margin-top:-3px;margin-left:-8px"
                                   title="Сайт автора персонажей" /></a></li> -->
-          </ul>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="header_block container-fluid">
-      <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs wow slideInLeft"><a href="#rioto" id="header_rioto"><img
-              title="Риото, 22 года" data-toggle="tooltip" data-placement="bottom" src="/images/Rioto.png"
-              class="img" /></a></div>
-        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs wow slideInLeft"><a href="#aeli"><img title="Аэли, 24 года"
-              data-toggle="tooltip" data-placement="bottom" src="/images/Aeli.png" class="img" /></a></div>
-        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs wow slideInLeft"><a href="#richard"><img
-              title="Ричард, 24 года" data-toggle="tooltip" data-placement="bottom" src="/images/Richard.png"
-              class="img" /></a></div>
-        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs wow slideInLeft"><a href="#tim"><img title="Тим, 14 лет"
-              data-toggle="tooltip" data-placement="bottom" src="/images/Tim.png" class="img" /></a></div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs wow slideInRight"><a href="#candy"><img title="Кенди, 22 года"
-              data-toggle="tooltip" data-placement="top" src="/images/Candy.png" class="img" /></a></div>
-        <div class="visible-xs wow zoomIn">
-          <p class="header_description"> Это мои персонажи, но не все. Если хочешь увидеть больше артов с
-            ними, свапай картинки</p>
+
+      <div class="header__block">
+        <div class="header__row">
+          <a class="header__item header__item_rioto" href="#rioto">
+            <img class="header__item-img" src="/images/Rioto.png" title="Риото, 22 года" data-toggle="tooltip"
+              data-placement="bottom" />
+          </a>
+          <a class="header__item header__item_aeli" href="#aeli">
+            <img class="header__item-img" src="/images/Aeli.png" title="Аэли, 24 года" data-toggle="tooltip"
+              data-placement="bottom" />
+          </a>
+          <a class="header__item header__item_richard" href="#richard">
+            <img class="header__item-img" src="/images/Richard.png" title="Ричард, 24 года" data-toggle="tooltip"
+              data-placement="bottom" class="img" />
+          </a>
+          <a class="header__item header__item_tim" href="#tim">
+            <img class="header__item-img" src="/images/Tim.png" title="Тим, 14 лет" data-toggle="tooltip"
+              data-placement="bottom" />
+          </a>
         </div>
-        <div style="vertical-align: text-bottom;" class="col-lg-6 col-md-6 col-sm-6 hidden-xs wow zoomIn">
-          <p class="header_description">Хочешь узнать больше о моих персонажах? Листай ниже или кликай на
-            изображение понравившегося героя! Если хочешь увидеть больше артов с ними, листай картинки</p>
+
+        <div class="header__row">
+          <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs wow slideInRight"><a href="#candy"><img
+                title="Кенди, 22 года" data-toggle="tooltip" data-placement="top" src="/images/Candy.png"
+                class="img" /></a></div>
+          <div class="visible-xs wow zoomIn">
+            <p class="header_description"> Это мои персонажи, но не все. Если хочешь увидеть больше артов с
+              ними, свапай картинки</p>
+          </div>
+          <div style="vertical-align: text-bottom;" class="col-lg-6 col-md-6 col-sm-6 hidden-xs wow zoomIn">
+            <p class="header_description">Хочешь узнать больше о моих персонажах? Листай ниже или кликай на
+              изображение понравившегося героя! Если хочешь увидеть больше артов с ними, листай картинки</p>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs wow slideInRight"><a href="#vadim"><img title="Вадим, 38 лет"
+                data-toggle="tooltip" data-placement="top" src="/images/Vadim.png" class="img" /></a></div>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs wow slideInRight"><a href="#vadim"><img title="Вадим, 38 лет"
-              data-toggle="tooltip" data-placement="top" src="/images/Vadim.png" class="img" /></a></div>
       </div>
     </div>
   </header>
+
   <div style="margin:auto;text-align:center;z-index:1;" class="container-fluid main">
     <div class="row">
       <div class="col-lg-6 col-md-6 wow slideInLeft">
@@ -99,8 +113,8 @@
       <p>Риото также знает Тима, однако не играл с ним, ведь Тим не любит детские забавы.</p>
     </div>
     <div class="row">
-      <div class="col-lg-6 col-md-6 wow slideInLeft"><img src="/images/кенди2.jpg" style="width:100%;"
-          class="img" id="candy" /></div>
+      <div class="col-lg-6 col-md-6 wow slideInLeft"><img src="/images/кенди2.jpg" style="width:100%;" class="img"
+          id="candy" /></div>
       <div class="col-lg-6 block col-md-6 wow slideInRight">
         <p class="head">Кенди</p>
         <p>Спанри и еще один автор с multator.ru на общем аккаунте создали меня. После этого аккаунт был
@@ -143,8 +157,8 @@
       <p>А еще он - прототип брата автора, только более идеальный</p>
     </div>
     <div class="row">
-      <div class="col-lg-6 col-md-6 wow slideInLeft"><img src="/images/ричард.jpg" style="width:100%;"
-          class="img" id="richard" /></div>
+      <div class="col-lg-6 col-md-6 wow slideInLeft"><img src="/images/ричард.jpg" style="width:100%;" class="img"
+          id="richard" /></div>
       <div class="col-lg-6 block col-md-6 wow slideInRight">
         <p class="head">Ричард</p>
         <p>Привет, бро. Я Ричард, бультерьер, хотя я не уверен и мне вроде 24 уже. Я крч не вейплю, не курю и не
