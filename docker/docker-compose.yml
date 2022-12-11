@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  spanri_github_io_frontend:
+    container_name: spanri_github_io_frontend
+    build:
+      context: ../frontend
+      dockerfile: ../docker/Dockerfile
+    volumes:
+      - ../frontend:/app
+      - app/node_modules
+    ports:
+      - "3300:8080"
+
