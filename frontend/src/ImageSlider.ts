@@ -26,6 +26,7 @@ const styleTag = `
       border-radius: 50px;
       box-shadow: 0px 0px 15px 0px rgba(34, 60, 80, 0.2);
       font-size: 28px;
+      user-select: none;
       cursor: pointer;
       transition: 0.3s;
     }
@@ -37,17 +38,32 @@ const styleTag = `
 
     .slider__content {
       position: relative;
-      width: 500px;
-      height: 100%;
+      // width: calc(100% - 8px);
+      height: calc(100% - 8px);
       overflow: hidden;
+      padding: 4px;
     }
 
     .slider__img {
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
+    }
+
+    .slider__img-wrapper {
       position: absolute;
       top: 0;
-      left: var(--left-position);
-      height: 100%;
+      left: var(--left-position, 0px);
+      
+      width: calc(100% - 16px);
+      height: calc(100% - 16px);
       transition: 0.6s;
+      padding: 8px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   </style>
 `
@@ -63,7 +79,11 @@ export class ImageSlider extends HTMLElement {
   connectedCallback() {
     this.attachShadow({ mode: 'open' });
 
-    const getImgTag = (source, index) => `<img style="--left-position: ${(index - this.currentIndex) * 100 + '%'}" class="slider__img" src="${source}" width="500" />`
+    const getImgTag = (source, index) => `
+      <div style="--left-position: ${(index - this.currentIndex) * 100 + '%'}" class="slider__img-wrapper">
+        <img class="slider__img" src="${source}" />
+      </div>
+    `
 
     this.shadowRoot.innerHTML = `
       ${styleTag}
@@ -77,16 +97,25 @@ export class ImageSlider extends HTMLElement {
 
     const contentElement = this.shadowRoot.getElementById("content")
     const contentItems = [...contentElement.children]
-    contentItems.forEach((contentItem, index) => {
-      const rect = contentItem.getBoundingClientRect()
-      if(rect.height > this.maxHeight) {
-        this.maxHeight = rect.height
-      }
-    })        
-    contentElement.style.height = this.maxHeight + 'px'
+    // contentItems.forEach((contentItem, index) => {
+    //   const rect = contentItem.getBoundingClientRect()
+    //   if(rect.height > this.maxHeight) {
+    //     this.maxHeight = rect.height
+    //   }
+    // })        
+    // contentElement.style.height = this.maxHeight + 'px'
 
     const buttonLeftElement = this.shadowRoot.getElementById("button-left")
     const buttonRightElement = this.shadowRoot.getElementById("button-right")
+
+    this.updateArrowsVisibility()
+
+    // на первом итеме скрываем стрелочку влево
+    buttonLeftElement.style.display = 'none'
+
+    if(this.slotsImageSources.length <= 1) {
+      buttonRightElement.style.display = 'none'
+    }
 
     buttonLeftElement.addEventListener("click", (event) => {
       if(this.currentIndex > 0) {
@@ -96,12 +125,8 @@ export class ImageSlider extends HTMLElement {
         contentItems.forEach((contentItem, index) => {
           contentItem.style.setProperty('--left-position', (index - this.currentIndex) * 100 + '%');
         })
-        
-        if(this.currentIndex === 0) {
-          buttonLeftElement.style.display = 'none'
-        }
 
-        buttonRightElement.style.display = 'block'
+        this.updateArrowsVisibility()
       }
     })
 
@@ -114,11 +139,7 @@ export class ImageSlider extends HTMLElement {
           contentItem.style.setProperty('--left-position', (index - this.currentIndex) * 100 + '%');
         })
 
-        if(this.currentIndex === this.slotsImageSources.length - 1) {
-          buttonRightElement.style.display = 'none'
-        }
-
-        buttonLeftElement.style.display = 'block'
+        this.updateArrowsVisibility()
       }
     })
   }
@@ -128,6 +149,28 @@ export class ImageSlider extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     if(name === 'slots') {
       this.slotsImageSources = JSON.parse(newValue)
+    }
+  }
+
+  updateArrowsVisibility() {
+    const buttonLeftElement = this.shadowRoot.getElementById("button-left")
+    const buttonRightElement = this.shadowRoot.getElementById("button-right")
+
+    if(this.currentIndex === 0) {
+      buttonLeftElement.style.display = 'none'
+    } else {
+      buttonLeftElement.style.display = 'block'
+    }
+
+    if(this.currentIndex === this.slotsImageSources.length - 1) {
+      buttonRightElement.style.display = 'none'
+    } else {
+      buttonRightElement.style.display = 'block'
+    }
+
+    if(this.slotsImageSources.length <= 1) {
+      buttonLeftElement.style.display = 'none'
+      buttonRightElement.style.display = 'none'
     }
   }
 }

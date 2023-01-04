@@ -68,7 +68,6 @@ h6 {
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1.5rem 1.5rem 0;
 
   @media(max-width: 500px) {
     padding: 0.5rem 0.5rem 0;
@@ -221,17 +220,29 @@ h6 {
 .content {
   max-width: 1200px;
   margin: 1rem auto;
+  padding: 0 1rem;
 
   &__row {
-    margin-bottom: 1rem;
     display: flex;
+
+    @media(max-width: 900px) {
+      flex-wrap: wrap;
+    }
     
     &-image-slider {
       flex-grow: 1;
       width: 100%;
+      min-width: calc(40% - 1rem);
       border-radius: 1rem;
       margin-right: 1rem;
-      // overflow: hidden;
+      margin-bottom: 1rem;
+      border: 2px dashed rgba(167, 219, 216, 1);
+      border-radius: 1rem;
+
+      @media(max-width: 900px) {
+        margin-right: 0;
+        height: 350px;
+      }
     }
 
     &-description {
@@ -242,6 +253,7 @@ h6 {
       border: 2px dashed transparent;
       border-radius: 1rem;
       padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
 
       transition: 0.3s;
 
@@ -272,7 +284,7 @@ h6 {
     transition: 0.3s;
     
     &:hover {
-      border-color: rgba(0, 117, 129);;
+      border-color: rgba(0, 117, 129);
     }
 
     &-title {
@@ -287,8 +299,12 @@ h6 {
   }
 }
 
-footer {
-  padding: 1%;
+.footer {
+  padding: 2rem 0 2rem;
+  font-size: 1rem;
+  background: rgb(101,170,176);
+  background: linear-gradient(90deg, rgba(101,170,176,1) 0%, rgba(157,193,185,0.6194852941176471) 50%, rgba(239,227,171,1) 100%);
+  color: rgba(0, 117, 129, 0.8);
   text-align: center;
 }
 
