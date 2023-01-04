@@ -16,202 +16,217 @@
 
   <header class="header-wrapper">
     <div class="header">
-      <div class="header__navbar navbar" role="navigation">
-        <div style="max-width:1200px;margin:auto;" class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-target="#qwerty" data-toggle="collapse"
-              aria-expanded="false"><img src="/hamb.svg" style="width:30px;color:white;" /></button>
+      <div class="header__navbar" role="navigation">
+        <div class="header__logo">
+          <span class="header__logo-title">Spanri</span>
+          <span class="header__logo-description">Персонажи</span>
+        </div>
 
-            <div class="navbar-brand">Spanri <p class="visible-xs">&nbsp; Персонажи</p>
-            </div>
-          </div>
-
-          <div class="collapse navbar-collapse" id="qwerty">
-            <ul class="nav navbar-nav navbar-right" style="margin:0;">
-              <li class="menu"><a href="http://vk.com/art_nysha" class="visible-xs">Группа вк автора
-                  персонажей</a><a href="http://vk.com/art_nysha" class="hidden-xs"><img src="/vk.svg"
-                    style="width:40px;margin-top:-7px;" title="Группа автора персонажей" /></a></li>
-              <!-- <li class="menu"><a href="../index.html" class="visible-xs">Сайт автора персонажей</a><a
-                              href="../index.html" class="hidden-xs"><img src="/earth.svg"
-                                  style="width: 32px;margin-top:-3px;margin-left:-8px"
-                                  title="Сайт автора персонажей" /></a></li> -->
-            </ul>
-          </div>
+        <div class="header__links">
+          <a class="header__links-item" href="http://vk.com/art_nysha"><img src="/vk.svg"
+              title="Группа автора персонажей" /></a>
+          <a class="header__links-item" href="../index.html"><img src="/earth.svg" title="Сайт автора персонажей" /></a>
         </div>
       </div>
 
       <div class="header__block">
         <div class="header__row">
           <a class="header__item header__item_rioto" href="#rioto">
-            <img class="header__item-img" src="/images/Rioto.png" title="Риото, 22 года" data-toggle="tooltip"
+            <img class="header__item-layer-img" src="/images/layer1-1.svg" />
+            <img class="header__item-img" src="/images/Rioto/Rioto.png" title="Риото, 22 года" data-toggle="tooltip"
               data-placement="bottom" />
           </a>
           <a class="header__item header__item_aeli" href="#aeli">
-            <img class="header__item-img" src="/images/Aeli.png" title="Аэли, 24 года" data-toggle="tooltip"
+            <img class="header__item-layer-img" src="/images/layer1-2.svg" />
+            <img class="header__item-img" src="/images/Aeli/Aeli.png" title="Аэли, 24 года" data-toggle="tooltip"
               data-placement="bottom" />
           </a>
-          <a class="header__item header__item_richard" href="#richard">
-            <img class="header__item-img" src="/images/Richard.png" title="Ричард, 24 года" data-toggle="tooltip"
-              data-placement="bottom" class="img" />
+          <a class="header__item header__item_vadim" href="#vadim">
+            <img class="header__item-layer-img" src="/images/layer1-3.svg" />
+            <img class="header__item-img" src="/images/Vadim/Vadim.png" title="Вадим, 38 лет" data-toggle="tooltip"
+              data-placement="bottom" />
           </a>
           <a class="header__item header__item_tim" href="#tim">
-            <img class="header__item-img" src="/images/Tim.png" title="Тим, 14 лет" data-toggle="tooltip"
+            <img class="header__item-layer-img" src="/images/layer1-4.svg" />
+            <img class="header__item-img" src="/images/Tim/Tim.png" title="Тим, 14 лет" data-toggle="tooltip"
               data-placement="bottom" />
+
           </a>
         </div>
 
         <div class="header__row">
-          <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs wow slideInRight"><a href="#candy"><img
-                title="Кенди, 22 года" data-toggle="tooltip" data-placement="top" src="/images/Candy.png"
-                class="img" /></a></div>
-          <div class="visible-xs wow zoomIn">
-            <p class="header_description"> Это мои персонажи, но не все. Если хочешь увидеть больше артов с
-              ними, свапай картинки</p>
-          </div>
-          <div style="vertical-align: text-bottom;" class="col-lg-6 col-md-6 col-sm-6 hidden-xs wow zoomIn">
-            <p class="header_description">Хочешь узнать больше о моих персонажах? Листай ниже или кликай на
-              изображение понравившегося героя! Если хочешь увидеть больше артов с ними, листай картинки</p>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs wow slideInRight"><a href="#vadim"><img title="Вадим, 38 лет"
-                data-toggle="tooltip" data-placement="top" src="/images/Vadim.png" class="img" /></a></div>
+          <a class="header__item header__item_tim" href="#candy">
+            <img class="header__item-layer-img" src="/images/layer2-1.svg" />
+            <img class="header__item-img" src="/images/Candy/Candy.png" title="Кенди, 22 года" data-toggle="tooltip"
+              data-placement="bottom" />
+          </a>
+          <p class="header__description">Это мои персонажи.<br />Листай ниже, чтобы узнать больше :)</p>
+          <a class="header__item header__item_richard" href="#richard">
+            <img class="header__item-layer-img" src="/images/layer2-2.svg" />
+            <img class="header__item-img" src="/images/Richard/Richard.png" title="Ричард, 24 года"
+              data-toggle="tooltip" data-placement="bottom" class="img" />
+          </a>
         </div>
       </div>
     </div>
   </header>
 
-  <div style="margin:auto;text-align:center;z-index:1;" class="container-fluid main">
-    <div class="row">
-      <div class="col-lg-6 col-md-6 wow slideInLeft">
-        <div class="carousel fade" data-ride="carousel" id="rioto-car">
-          <div class="carousel-inner">
-            <div class="item active"><img src="/images/риото4.png" class="img" id="rioto" /></div>
-            <div class="item"><img src="/images/риотка.jpg" class="img" id="rioto" /></div>
-            <div class="item"><img src="/images/риотка4.jpg" class="img" id="rioto" /></div>
-            <div class="item"><img src="/images/риотка5.jpg" class="img" id="rioto" /></div>
-          </div> <!-- Навигация для карусели --><a class="hidden-xs carousel-control left" href="#rioto-car"
-            data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span></a><a
-            class="hidden-xs carousel-control right" href="#rioto-car" data-slide="next"> <span
-              class="glyphicon glyphicon-chevron-right"></span></a>
-        </div>
+  <div class="content">
+    <div class="content__row">
+      <div class="content__row-image-slider">
+        <custom-image-slider
+          slots='["/images/Rioto/Rioto.png", "/images/Rioto/Rioto2.jpg", "/images/Rioto/Rioto3.jpg", "/images/Rioto/Rioto4.jpg", "/images/Rioto/Rioto5.png"]'>
+        </custom-image-slider>
       </div>
-      <div class="col-lg-6 block col-md-6 wow slideInRight">
-        <p class="head">Риото
-        <p>Я самый продуманный персонаж. Придуман аж в 2014 году!</p> Спанри говорит, что я олицетворяю ее со
-        стороны странности, необычности, ребячества, интереса и творчества. Но я хочу быть оригинальным! Я пою,
-        люблю смотреть мульфильмы, есть чипсы и еще обожаю своего кролика. Впервые я его увидел на подоконнике
-        своей комнаты с уличной стороны и влюбился. Живу с Кенди, а еще у меня нет паспорта и вообще
-        удостоверяющих документов, ха-ха! Не хочу их делать, потому что так мне не надо работать (ну только
-        фриланс). К техническим наукам этим я отношусь с недоверием, больше люблю интуицию. В прошлом дракон!
-        Правда не имеющий любви у родителей и потому сбежавший в мир людей...</p>
+
+      <div class="content__row-description">
+        <h2 class="content__row-description-title">Риото</h2>
+        <div class="content__row-description-text">
+          Я самый продуманный персонаж. Придуман аж в 2014 году!<br />
+          Спанри говорит, что я олицетворяю ее со стороны странности, необычности, ребячества, интереса и творчества.
+          Но я хочу быть оригинальным! Я пою,
+          люблю смотреть мульфильмы, есть чипсы и еще обожаю своего кролика. Впервые я его увидел на подоконнике
+          своей комнаты с уличной стороны и влюбился. Живу с Кенди, а еще у меня нет паспорта и вообще
+          удостоверяющих документов, ха-ха! Не хочу их делать, потому что так мне не надо работать (ну только
+          фриланс). К техническим наукам этим я отношусь с недоверием, больше люблю интуицию. В прошлом дракон!
+          Правда не имеющий любви у родителей и потому сбежавший в мир людей...</div>
       </div>
     </div>
-    <div class="notblock wow zoomIn">
-      <p class="head">Немного интересных фактов!</p>
-      <p>Первый человек, с которым познакомился Риото - Кенди. Ему понравился дом, поэтому он даже пытался играть
+
+    <div class="content__additional">
+      <h2 class="content__additional-title">Немного интересных фактов!</h2>
+      <p class="content__additional-text">
+        Первый человек, с которым познакомился Риото - Кенди. Ему понравился дом, поэтому он даже пытался играть
         хорошего мальчика, чтобы завоевать доверие Кенди. Когда он понял, что это необязательно, ребячесть дала
-        волю. </p>
-      <p>Риото также знает Тима, однако не играл с ним, ведь Тим не любит детские забавы.</p>
+        волю.<br />
+        Риото также знает Тима, однако не играл с ним, ведь Тим не любит детские забавы.
+      </p>
     </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 wow slideInLeft"><img src="/images/кенди2.jpg" style="width:100%;" class="img"
-          id="candy" /></div>
-      <div class="col-lg-6 block col-md-6 wow slideInRight">
-        <p class="head">Кенди</p>
-        <p>Спанри и еще один автор с multator.ru на общем аккаунте создали меня. После этого аккаунт был
+
+    <div class="content__row">
+      <custom-image-slider class="content__row-image-slider"
+        slots='["/images/Candy/Candy.png", "/images/Candy/Candy2.jpg", "/images/Candy/Candy3.png"]'>
+      </custom-image-slider>
+
+      <div class="content__row-description">
+        <h2 class="content__row-description-title">Кенди</h2>
+        <div class="content__row-description-text">
+          Спанри и еще один автор с multator.ru на общем аккаунте создали меня. После этого аккаунт был
           заброшен, но Спанри было жалко такого замечательного героя и она придумала мне историю. А потом
           появился Риото, благодаря которому я прочно вошла в историю мира. Я олицетворяю женскую сторону
           Спанри, и конечно куда без увлечений мальчиками... Однако, тссс, я не люблю показывать чувства, ведь
-          я постоянно не уверена в них: а вдруг кажется? </p>
-        <p>Я работаю певицей в баре, однако не люблю шум и всегда ругаю Риото, если он создает слишком много
+          я постоянно не уверена в них: а вдруг кажется?<br />
+          Я работаю певицей в баре, однако не люблю шум и всегда ругаю Риото, если он создает слишком много
           этого шума. Хочу стать богатой и целыми днями только есть и смотреть сериалы. Очень домашняя, хотя,
-          как и у всех, бывают всплески энергии.</p>
+          как и у всех, бывают всплески энергии.</div>
       </div>
     </div>
-    <div class="notblock wow zoomIn">
-      <p class="head">Больше фактов о персонажах!</p>
-      <p>Кенди впустила в дом Риото потому, что он ей показался красивым. Но она сама утверждает, что это из-за
-        того, что у нее было скучно дома. Да-да.</p>
-      <p>Первоначально Кенди носила 2 хвоста и клетчатую рубашку, однако автор отказалась от этого.</p>
-    </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 wow slideInLeft"><img src="/images/тим.jpg" style="width:100%;" class="img"
-          id="tim" /></div>
-      <div class="col-lg-6 block col-md-6 wow slideInRight">
-        <p class="head">Тим</p>
-        <p>Серьезно, мне нечего сказать о себе! Я обычный подросток, мне 14, люблю физику и учить языки
-          программирования. Ты что, даже не знаешь, что это? Пожалуйста, не подходи. Мне нужно личное
-          пространство. А еще одноклассники такие шумные и тупые! </p>
-        <p>Что, еще о себе рассказать? Ну... Я браслеты люблю, мясо... еще в игры играть. Че сказать? А, окей.
-          Тут Спанри говорит, что я олицетворяю ее ум и хикканутость. Стоп, что?? Все, конец интервью,
-          отстаньте!</p>
-      </div>
-    </div>
-    <div class="notblock wow zoomIn">
-      <p class="head">Что-то интересненькое о Тиме...</p>
-      <p>Тим был брошен родителями в 2 года из-за нагрянувшего очень хорошего предложения работы, не совместимого
-        с ребенком.</p>
-      <p>В 9 лет юного чехословацкого влчака усыновила Аели, но травмы Тима не прошли и он остался обижен на мир.
+
+    <div class="content__additional">
+      <h2 class="content__additional-title">Больше фактов о персонажах!</h2>
+      <p class="content__additional-text">
+        Кенди впустила в дом Риото потому, что он ей показался красивым. Но она сама утверждает, что это из-за
+        того, что у нее было скучно дома. Да-да.<br />
+        Первоначально Кенди носила 2 хвоста и клетчатую рубашку, однако автор отказалась от этого.
       </p>
-      <p>Тим был влюблен в школе в одноклассницу, однако любовь к техническим наукам и сарказму вытеснила
-        романтческие чувства. Технари опасны...</p>
-      <p>А еще он - прототип брата автора, только более идеальный</p>
     </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 wow slideInLeft"><img src="/images/ричард.jpg" style="width:100%;" class="img"
-          id="richard" /></div>
-      <div class="col-lg-6 block col-md-6 wow slideInRight">
-        <p class="head">Ричард</p>
-        <p>Привет, бро. Я Ричард, бультерьер, хотя я не уверен и мне вроде 24 уже. Я крч не вейплю, не курю и не
+
+    <div class="content__row">
+      <custom-image-slider class="content__row-image-slider" slots='["/images/Tim/Tim.png", "/images/Tim/Tim2.jpg"]'>
+      </custom-image-slider>
+
+      <div class="content__row-description">
+        <h2 class="content__row-description-title">Тим</h2>
+        <div class="content__row-description-text">
+          Серьезно, мне нечего сказать о себе! Я обычный подросток, мне 14, люблю физику и учить языки
+          программирования. Ты что, даже не знаешь, что это? Пожалуйста, не подходи. Мне нужно личное
+          пространство. А еще одноклассники такие шумные и тупые!<br />
+          Что, еще о себе рассказать? Ну... Я браслеты люблю, мясо... еще в игры играть. Че сказать? А, окей.
+          Тут Спанри говорит, что я олицетворяю ее ум и хикканутость. Стоп, что?? Все, конец интервью,
+          отстаньте!</div>
+      </div>
+    </div>
+
+    <div class="content__additional">
+      <h2 class="content__additional-title">Что-то интересненькое о Тиме...</h2>
+      <p class="content__additional-text">
+        Тим был брошен родителями в 2 года из-за нагрянувшего очень хорошего предложения работы, не совместимого
+        с ребенком.<br />
+        В 9 лет юного чехословацкого влчака усыновила Аели, но травмы Тима не прошли и он остался обижен на мир.<br />
+        Тим был влюблен в школе в одноклассницу, однако любовь к техническим наукам и сарказму вытеснила
+        романтческие чувства. Технари опасны...
+      </p>
+    </div>
+
+    <div class="content__row">
+      <custom-image-slider class="content__row-image-slider"
+        slots='["/images/Richard/Richard.png", "/images/Richard/Richard2.jpg"]'>
+      </custom-image-slider>
+
+      <div class="content__row-description">
+        <h2 class="content__row-description-title">Ричард</h2>
+        <div class="content__row-description-text">
+          Привет, бро. Я Ричард, бультерьер, хотя я не уверен и мне вроде 24 уже. Я крч не вейплю, не курю и не
           кручу спиннеры, но меня все равно считают позером.Нет, ну кто виноват, что у меня такая офигенная
           внешность? А хвост... Ты видал такой у кого еще? Преклонись передо мной и дам посмотреть на меня
           еще, ха. А вообще некогда мне, надо показать себя миру, последние новости из мемного мира узнать...
-          Где там мои колонки битс1488?</p>
-        <p>Ладно, вообще, я люблю спать и не люблю убивать, честно. Но ты прикинь, мой хвост в моменты опасности
+          Где там мои колонки битс1488?<br />
+          Ладно, вообще, я люблю спать и не люблю убивать, честно. Но ты прикинь, мой хвост в моменты опасности
           может стать оружкой! Да я сам каждый раз в шоке. Поэтому плиз не подходи, если не собираешься че
           нить подарить. И это, если у меня вдруг глаза нальются кровью, это еще не значит, что я тебя убью.
-          Мб у тебя завалялся кусочек мяса и я его учуял? Ну или конфетка, ок...</p>
+          Мб у тебя завалялся кусочек мяса и я его учуял? Ну или конфетка, ок...</div>
       </div>
     </div>
-    <div class="notblock wow zoomIn">
-      <p class="head">Еще чуть-чуть фактов</p>
-      <p>Ричард умен, но не сравнится с Тимом. Он любит склонять все живое к себе и управлять. Однако, его легко
-        победить зимой. Этот позер ужасно боится холода, у него ведь такая короткая шерсть!</p>
-      <p>Глаза наливаются кровью, когда хочет спать, есть или убивать. Стоит учитывать все варианты...</p>
-      <p>Размер хвоста увеличивается в зависимости от количества убийств. Его хвост еще не самый длинный, видели и
-        побольше, но лучше с ним быть осторожнее. Можно его мемами задобрить.</p>
+
+    <div class="content__additional">
+      <h2 class="content__additional-title">Еще чуть-чуть фактов</h2>
+      <p class="content__additional-text">
+        Ричард умен, но не сравнится с Тимом. Он любит склонять все живое к себе и управлять. Однако, его легко
+        победить зимой. Этот позер ужасно боится холода, у него ведь такая короткая шерсть!<br />
+        Глаза наливаются кровью, когда хочет спать, есть или убивать. Стоит учитывать все варианты...<br />
+        Размер хвоста увеличивается в зависимости от количества убийств. Его хвост еще не самый длинный, видели и
+        побольше, но лучше с ним быть осторожнее. Можно его мемами задобрить.
+      </p>
     </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 wow slideInLeft"><img src="/images/вадим.jpg" style="width:100%;" class="img"
-          id="vadim" /></div>
-      <div class="col-lg-6 block col-md-6 wow slideInRight">
-        <p class="head">Вадим</p>
-        <p>Я - самый первый персонаж Спанри. Сначала я вообще обладал магией во лбу(потому что там кристалл
+
+    <div class="content__row">
+      <custom-image-slider class="content__row-image-slider"
+        slots='["/images/Vadim/Vadim.png", "/images/Vadim/Vadim2.jpg"]'>
+      </custom-image-slider>
+
+      <div class="content__row-description">
+        <h2 class="content__row-description-title">Вадим</h2>
+        <div class="content__row-description-text">
+          Я - самый первый персонаж Спанри. Сначала я вообще обладал магией во лбу(потому что там кристалл
           был), имел имя Ввадюша и был активным малым. Но время идет, люди растут, вырос и я, стал Вадимом,
           инструктором по велоспорту. Люблю спорт и не сидеть на месте. А еще вкусно есть. "Статен, высок,
-          красив" - так писала обо мне Спанри. Я не против.</p>
+          красив" - так писала обо мне Спанри. Я не против.</div>
       </div>
     </div>
-    <div class="notblock wow zoomIn">
-      <p class="head">Сплетни о персонаже?!</p>
-      <p>Вадим - парень Аэли, практически жених. Но что-то у них не идет. Может из-за разницы в 13 лет?</p>
-      <p>Вадим строит из себя организованного и взрослого человека, но рядом с Аэли он все тот же Ввадюша, что и
-        раньше.</p>
+
+    <div class="content__additional">
+      <h2 class="content__additional-title">Сплетни о персонаже?!</h2>
+      <p class="content__additional-text">
+        Вадим - парень Аэли, практически жених. Но что-то у них не идет. Может из-за разницы в 13 лет?<br />
+        Вадим строит из себя организованного и взрослого человека, но рядом с Аэли он все тот же Ввадюша, что и
+        раньше.
+      </p>
     </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 wow slideInLeft"><img src="/images/467.png" style="width:100%;" class="img"
-          id="aeli" /></div>
-      <div class="col-lg-6 block col-md-6 wow slideInRight">
-        <p class="head">Аэли</p>
-        <p>Привеееет. Помню, когда меня Спанри создавала, то так долго продумывала! Я ее первый осознанный
+
+    <div class="content__row">
+      <custom-image-slider class="content__row-image-slider" slots='["/images/Aeli/Aeli.png"]'>
+      </custom-image-slider>
+
+      <div class="content__row-description">
+        <h2 class="content__row-description-title">Аэли</h2>
+        <div class="content__row-description-text">
+          Привеееет. Помню, когда меня Спанри создавала, то так долго продумывала! Я ее первый осознанный
           персонаж и она хотела, чтобы я была идеальной! Но должна же быть изюминка... Может во мне она есть,
           не знааааю. Кто я? Ну, я антропоморф, но люблю косить под лис и собак, изящных и ловких. А еще я
           обожаю мясо, танцевать, петь иногда... Но работаю консультантом одежды. И что? Зато вон какой у меня
           Вадя! А еще у меня длинный хвост, не зависимо от формы и мне это даже нравится. На него можно лечь,
-          если рядом нет подушки. Предусмотрительно, Спанри, спасибо!</p>
+          если рядом нет подушки. Предусмотрительно, Спанри, спасибо!</div>
       </div>
-    </div>
-    <div class="notblock wow zoomIn">
-      <p class="head">Кто же она?</p>
     </div>
   </div>
   <footer> &copy; Spanri, 2022</footer>
