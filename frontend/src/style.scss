@@ -47,7 +47,7 @@ html {
 body {
   min-height: 100%;
   background-color: white;
-  background-image: url("images/pattern.png");
+  background-image: url("@/images/pattern.png");
   background-size: 50%;
   margin: 0;
 }
@@ -73,20 +73,20 @@ h6 {
 
 @font-face {
   font-family: 'font1';
-  src: url("fonts/1.woff2") format("woff2"), url("fonts/1.woff") format("woff"), url("fonts/1.eot") format("eot");
+  src: url("@/fonts/1.woff2") format("woff2"), url("@/fonts/1.woff") format("woff"), url("@/fonts/1.eot") format("eot");
   font-weight: normal;
   font-size: 75px;
 }
 
 @font-face {
   font-family: 'font4';
-  src: url("fonts/4.woff2") format("woff2"), url("fonts/4.woff") format("woff"), url("fonts/4.eot") format("eot");
+  src: url("@/fonts/4.woff2") format("woff2"), url("@/fonts/4.woff") format("woff"), url("@/fonts/4.eot") format("eot");
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'font5';
-  src: url("fonts/5.woff2") format("woff2"), url("fonts/5.woff") format("woff"), url("fonts/5.eot") format("eot");
+  src: url("@/fonts/5.woff2") format("woff2"), url("@/fonts/5.woff") format("woff"), url("@/fonts/5.eot") format("eot");
   font-weight: normal;
 }
 
@@ -96,7 +96,7 @@ h6 {
   padding: 0 1rem 2rem;
 
   &-wrapper {
-    background-image: url("images/header-background.jpg");
+    background-image: url("@/images/header-background.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
