@@ -74,6 +74,11 @@ const styleTag = `
 `
 
 export class ImageSlider extends HTMLElement {
+  slotsImageSources: string[]
+  currentIndex: number
+  maxHeight: number
+  shadowRoot: any
+
   constructor() {
     super();
     this.slotsImageSources = []
@@ -84,7 +89,7 @@ export class ImageSlider extends HTMLElement {
   connectedCallback() {
     this.attachShadow({ mode: 'open' });
 
-    const getImgTag = (source, index) => `
+    const getImgTag = (source: string, index: number) => `
       <div style="--left-position: ${(index - this.currentIndex) * 100 + '%'}" class="slider__img-wrapper">
         <img class="slider__img" src="${source}" />
       </div>
@@ -114,7 +119,7 @@ export class ImageSlider extends HTMLElement {
       buttonRightElement.style.display = 'none'
     }
 
-    buttonLeftElement.addEventListener("click", (event) => {
+    buttonLeftElement.addEventListener("click", () => {
       if(this.currentIndex > 0) {
         this.currentIndex -= 1
 
@@ -127,7 +132,7 @@ export class ImageSlider extends HTMLElement {
       }
     })
 
-    buttonRightElement.addEventListener("click", (event) => {
+    buttonRightElement.addEventListener("click", () => {
       if(this.currentIndex < this.slotsImageSources.length - 1) {
         this.currentIndex += 1
 
@@ -143,7 +148,7 @@ export class ImageSlider extends HTMLElement {
 
   static get observedAttributes() { return ['slots']; }
 
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback(name: string, _: string, newValue: string) {
     if(name === 'slots') {
       this.slotsImageSources = JSON.parse(newValue)
     }

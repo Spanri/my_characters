@@ -47,6 +47,8 @@ const styleTag = `
 `
 
 export class Tooltip extends HTMLElement {
+  shadowRoot: any
+
   constructor() {
     super();
   }
@@ -69,19 +71,12 @@ export class Tooltip extends HTMLElement {
     const tooltipElement = this.shadowRoot.getElementById("tooltip")
     const tooltipValueElement = this.shadowRoot.getElementById("tooltip-value")
 
-    tooltipElement.addEventListener("mouseover", () => {
-      tooltipValueElement.style.marginLeft = `calc(50% - ${tooltipValueElement.getBoundingClientRect().width / 2}px)`
-    })
-    tooltipElement.addEventListener("mouseout", () => {
-      //
-    })
-  }
-
-  static get observedAttributes() { return ['slots']; }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if(name === 'slots') {
-      // 
+    if(tooltipElement) {
+      tooltipElement.addEventListener("mouseover", () => {
+        if(tooltipValueElement) {
+          tooltipValueElement.style.marginLeft = `calc(50% - ${tooltipValueElement.getBoundingClientRect().width / 2}px)`
+        }
+      })
     }
   }
 }
