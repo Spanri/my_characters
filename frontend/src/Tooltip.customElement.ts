@@ -80,5 +80,31 @@ export class Tooltip extends HTMLElement {
         }
       });
     }
+
+    if(this.getAttribute("bottom") !== null) {
+      this.updateBottom()
+    }
+  }
+
+  static get observedAttributes() {
+    return ["bottom"];
+  }
+
+  attributeChangedCallback(name: string, _oldValue: string, _newValue: string) {
+    if (name === "bottom") {
+      this.updateBottom()
+    }
+  }
+
+  updateBottom() {
+    if(this.shadowRoot) {
+      const tooltipValueElement = this.shadowRoot.getElementById("tooltip-value");
+      if(tooltipValueElement) {
+        const tooltipElement = this.shadowRoot.getElementById("tooltip");
+        if(tooltipElement) {
+          tooltipValueElement.style.marginTop = `calc(100% + ${tooltipElement.getBoundingClientRect().height}px)`
+        }
+      }
+    }
   }
 }

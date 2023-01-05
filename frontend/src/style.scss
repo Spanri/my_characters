@@ -113,7 +113,7 @@ h6 {
     flex-grow: 1;
 
     display: flex;
-    align-items: baseline;
+    align-items: center;
 
     &-title {
       font-family: font1;
@@ -122,20 +122,31 @@ h6 {
     }
 
     &-description {
-      font-family: font4;
-      font-size: 18px;
-      padding-bottom: 4px;
-      padding-left: 8px;
+      font-family: 'font5';
+      font-size: 1.3rem;
+      padding-left: 0.75rem;
+      line-height: 150%;
+      margin-bottom: -1.2rem;
     }
   }
 
   &__links {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+
+    padding-top: 1rem;
     
     &-item {
-      width: 40px;
-      padding-right: 12px;
+      // padding-right: 1.5rem;
+      
+      &-img {
+        transition: 0.3s;
+        fill: white !important;
+
+        &:hover {
+          fill: rgba(0, 117, 129) !important;
+        }
+      }
     }
   }
 
@@ -242,9 +253,10 @@ h6 {
 
     &-layer-img {
       position: absolute;
-      top: 20%;
-      left: 10%;
-      width: 80%;
+      top: 25%;
+      left: 5%;
+
+      width: 90%;
       z-index: 1;
     }
 
@@ -303,7 +315,7 @@ h6 {
       transition: 0.3s;
 
       &:hover {
-        border-color: rgba(0, 117, 129);;
+        border-color: rgba(0, 117, 129);
       }
 
       &-title {
