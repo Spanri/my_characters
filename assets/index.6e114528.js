@@ -109,10 +109,15 @@ var c=Object.defineProperty;var u=(n,i,t)=>i in n?c(n,i,{enumerable:!0,configura
   
       background: rgba(0, 117, 129, 0.5);
       color: white;
-      font-size: 1.1rem;
-      line-height: 1rem;
-      border-radius: 1rem;
-      padding: 0.6rem 1.2rem;
+      line-height: 0.5rem;
+      border-radius: 0.75rem;
+    }
+
+    @media(min-width: 701px) {
+      .tooltip-value {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+      }
     }
 
     @media(max-width: 700px) {
@@ -125,7 +130,7 @@ var c=Object.defineProperty;var u=(n,i,t)=>i in n?c(n,i,{enumerable:!0,configura
     @media(max-width: 500px) {
       .tooltip-value {
         font-size: 0.6rem;
-        padding: 0.2rem 0.6rem;
+        padding: 0.4rem 0.6rem;
       }
     }
   </style>
@@ -139,4 +144,4 @@ var c=Object.defineProperty;var u=(n,i,t)=>i in n?c(n,i,{enumerable:!0,configura
 
         <slot name="target"></slot>
       </div>
-    `;const i=this.shadowRoot.getElementById("tooltip"),t=this.shadowRoot.getElementById("tooltip-value");i&&i.addEventListener("mouseover",()=>{t&&(t.style.marginLeft=`calc(50% - ${t.getBoundingClientRect().width/2}px)`)}),this.getAttribute("bottom")!==null&&this.updateBottom()}static get observedAttributes(){return["bottom"]}attributeChangedCallback(i,t,s){i==="bottom"&&this.updateBottom()}updateBottom(){if(this.shadowRoot){const i=this.shadowRoot.getElementById("tooltip-value");if(i){const t=this.shadowRoot.getElementById("tooltip");t&&(i.style.marginTop=`calc(100% + ${t.getBoundingClientRect().height}px)`)}}}}customElements.define("custom-image-slider",p);customElements.define("custom-tooltip",g);
+    `;const i=this.shadowRoot.getElementById("tooltip"),t=this.shadowRoot.getElementById("tooltip-value");i&&i.addEventListener("mouseover",()=>{t&&(t.style.marginLeft=`calc(50% - ${t.getBoundingClientRect().width/2}px)`)}),this.getAttribute("bottom")!==null&&this.updateBottom()}static get observedAttributes(){return["bottom"]}attributeChangedCallback(i,t,s){i==="bottom"&&this.updateBottom()}updateBottom(){if(this.shadowRoot){const i=this.shadowRoot.getElementById("tooltip-value");if(i){const t=this.shadowRoot.getElementById("tooltip");t&&(i.style.marginTop=`calc(100% + ${t.getBoundingClientRect().height}px / 2)`)}}}}customElements.define("custom-image-slider",p);customElements.define("custom-tooltip",g);
