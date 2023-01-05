@@ -3,10 +3,12 @@
   --gray: #899EA9;
   --black: #103346;
 
-  --blue: #0070F4;
-  --blue-dark: #0052b0;
   --green-blue: #4BA199;
-  --green: #65A14C;
+  --green-gray: rgba(167, 219, 216, 0.5);
+  --green-light: rgb(167, 219, 216);
+  --green: rgba(0, 117, 129);
+  --green-dark: rgba(0, 117, 129, 0.8);
+  --green-darkest: rgba(0, 117, 129, 0.5);
 
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -46,7 +48,7 @@ html {
 
 body {
   min-height: 100%;
-  background-color: white;
+  background-color: var(--white);
   background-image: url("@/images/pattern.png");
   background-size: 50%;
   margin: 0;
@@ -108,7 +110,7 @@ h6 {
   }
 
   &__logo {
-    color: white;
+    color: var(--white);
     padding: 0.25rem 0.5rem;
     flex-grow: 1;
 
@@ -137,14 +139,14 @@ h6 {
     padding-top: 1rem;
     
     &-item {
-      // padding-right: 1.5rem;
+      padding-right: 1.5rem;
       
       &-img {
         transition: 0.3s;
-        fill: white !important;
+        fill: var(--white) !important;
 
         &:hover {
-          fill: rgba(0, 117, 129) !important;
+          fill: var(--green) !important;
         }
       }
     }
@@ -200,7 +202,7 @@ h6 {
       font-family: font5;
       font-size: 24px;
       line-height: 24px;
-      color: white;
+      color: var(--white);
       text-align: center;
 
       @media(max-width: 700px) {
@@ -217,7 +219,7 @@ h6 {
       padding-top: 1rem;
       font-size: 56px;
       line-height: 56px;
-      color: white;
+      color: var(--white);
       text-align: center;
       transform: rotate(90deg);
 
@@ -293,7 +295,7 @@ h6 {
       border-radius: 1rem;
       margin-right: 1rem;
       margin-bottom: 1rem;
-      border: 2px dashed rgba(167, 219, 216, 1);
+      border: 2px dashed var(--green-light);
       border-radius: 1rem;
 
       @media(max-width: 900px) {
@@ -305,8 +307,8 @@ h6 {
     &-description {
       flex-grow: 1;
       font-family: font5;
-      background: rgba(0, 117, 129, 0.5);
-      color: white;
+      background: var(--green-darkest);
+      color: var(--white);
       border: 2px dashed transparent;
       border-radius: 1rem;
       padding: 1rem 1.5rem;
@@ -315,7 +317,7 @@ h6 {
       transition: 0.3s;
 
       &:hover {
-        border-color: rgba(0, 117, 129);
+        border-color: var(--green);
       }
 
       &-title {
@@ -339,8 +341,8 @@ h6 {
 
   &__additional {
     font-family: font5;
-    background: rgba(167, 219, 216, 0.5);
-    color: rgba(0, 117, 129, 0.8);
+    background: var(--green-gray);
+    color: var(--green-dark);
     padding: 1.5rem;
     border: 2px dashed transparent;
     border-radius: 1rem;
@@ -349,7 +351,7 @@ h6 {
     transition: 0.3s;
     
     &:hover {
-      border-color: rgba(0, 117, 129);
+      border-color: var(--green);
     }
 
     &-title {
@@ -375,9 +377,9 @@ h6 {
 .footer {
   padding: 2rem 0 2rem;
   font-size: 1rem;
-  background: rgb(101,170,176);
+  background: var(--green-light);
   background: linear-gradient(90deg, rgba(101,170,176,1) 0%, rgba(157,193,185,0.6194852941176471) 50%, rgba(239,227,171,1) 100%);
-  color: rgba(0, 117, 129, 0.8);
+  color: var(--green-dark);
   text-align: center;
 }
 

@@ -24,10 +24,15 @@ const styleTag = `
   
       background: rgba(0, 117, 129, 0.5);
       color: white;
-      font-size: 1.1rem;
-      line-height: 1rem;
-      border-radius: 1rem;
-      padding: 0.6rem 1.2rem;
+      line-height: 0.5rem;
+      border-radius: 0.75rem;
+    }
+
+    @media(min-width: 701px) {
+      .tooltip-value {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+      }
     }
 
     @media(max-width: 700px) {
@@ -40,7 +45,7 @@ const styleTag = `
     @media(max-width: 500px) {
       .tooltip-value {
         font-size: 0.6rem;
-        padding: 0.2rem 0.6rem;
+        padding: 0.4rem 0.6rem;
       }
     }
   </style>
@@ -102,7 +107,7 @@ export class Tooltip extends HTMLElement {
       if(tooltipValueElement) {
         const tooltipElement = this.shadowRoot.getElementById("tooltip");
         if(tooltipElement) {
-          tooltipValueElement.style.marginTop = `calc(100% + ${tooltipElement.getBoundingClientRect().height}px)`
+          tooltipValueElement.style.marginTop = `calc(100% + ${tooltipElement.getBoundingClientRect().height}px / 2)`
         }
       }
     }
