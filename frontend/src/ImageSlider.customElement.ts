@@ -71,108 +71,129 @@ const styleTag = `
       justify-content: center;
     }
   </style>
-`
+`;
 
 export class ImageSlider extends HTMLElement {
-  slotsImageSources: string[]
-  currentIndex: number
-  maxHeight: number
-  shadowRoot: any
+  slotsImageSources: string[];
+  currentIndex: number;
+  maxHeight: number;
 
   constructor() {
     super();
-    this.slotsImageSources = []
-    this.currentIndex = 0
-    this.maxHeight = 0
+    this.slotsImageSources = [];
+    this.currentIndex = 0;
+    this.maxHeight = 0;
   }
 
   connectedCallback() {
-    this.attachShadow({ mode: 'open' });
+    this.attachShadow({ mode: "open" });
 
     const getImgTag = (source: string, index: number) => `
-      <div style="--left-position: ${(index - this.currentIndex) * 100 + '%'}" class="slider__img-wrapper">
+      <div style="--left-position: ${
+        (index - this.currentIndex) * 100 + "%"
+      }" class="slider__img-wrapper">
         <img class="slider__img" src="${source}" />
       </div>
-    `
+    `;
+
+    if (!this.shadowRoot) return;
 
     this.shadowRoot.innerHTML = `
       ${styleTag}
 
       <div class="slider">
         <div id="button-left" class="slider__button-left">‹</div>
-        <div id="content" class="slider__content">${this.slotsImageSources.map(getImgTag).join("")}</div>
+        <div id="content" class="slider__content">${this.slotsImageSources
+          .map(getImgTag)
+          .join("")}</div>
         <div id="button-right" class="slider__button-right">›</div>
       </div>
     `;
 
-    const contentElement = this.shadowRoot.getElementById("content")
+    const contentElement: any = this.shadowRoot.getElementById("content");
+    const buttonLeftElement = this.shadowRoot.getElementById("button-left");
+    const buttonRightElement = this.shadowRoot.getElementById("button-right");
 
-    const buttonLeftElement = this.shadowRoot.getElementById("button-left")
-    const buttonRightElement = this.shadowRoot.getElementById("button-right")
+    this.updateArrowsVisibility();
 
-    this.updateArrowsVisibility()
+    if (!contentElement) return;
+    if (!buttonLeftElement) return;
+    if (!buttonRightElement) return;
 
     // на первом итеме скрываем стрелочку влево
-    buttonLeftElement.style.display = 'none'
+    buttonLeftElement.style.display = "none";
 
-    if(this.slotsImageSources.length <= 1) {
-      buttonRightElement.style.display = 'none'
+    if (this.slotsImageSources.length <= 1) {
+      buttonRightElement.style.display = "none";
     }
 
     buttonLeftElement.addEventListener("click", () => {
-      if(this.currentIndex > 0) {
-        this.currentIndex -= 1
+      if (this.currentIndex > 0) {
+        this.currentIndex -= 1;
 
-        const contentItems = [...contentElement.children]
+        const contentItems = [...contentElement.children];
         contentItems.forEach((contentItem, index) => {
-          contentItem.style.setProperty('--left-position', (index - this.currentIndex) * 100 + '%');
-        })
+          contentItem.style.setProperty(
+            "--left-position",
+            (index - this.currentIndex) * 100 + "%"
+          );
+        });
 
-        this.updateArrowsVisibility()
+        this.updateArrowsVisibility();
       }
-    })
+    });
 
     buttonRightElement.addEventListener("click", () => {
-      if(this.currentIndex < this.slotsImageSources.length - 1) {
-        this.currentIndex += 1
+      if (this.currentIndex < this.slotsImageSources.length - 1) {
+        this.currentIndex += 1;
 
-        const contentItems = [...contentElement.children]
+        const contentItems = [...contentElement.children];
         contentItems.forEach((contentItem, index) => {
-          contentItem.style.setProperty('--left-position', (index - this.currentIndex) * 100 + '%');
-        })
+          contentItem.style.setProperty(
+            "--left-position",
+            (index - this.currentIndex) * 100 + "%"
+          );
+        });
 
-        this.updateArrowsVisibility()
+        this.updateArrowsVisibility();
       }
-    })
+    });
   }
 
-  static get observedAttributes() { return ['slots']; }
+  static get observedAttributes() {
+    return ["slots"];
+  }
 
   attributeChangedCallback(name: string, _: string, newValue: string) {
-    if(name === 'slots') {
-      this.slotsImageSources = JSON.parse(newValue)
+    if (name === "slots") {
+      this.slotsImageSources = JSON.parse(newValue);
     }
   }
 
   updateArrowsVisibility() {
-    const buttonLeftElement = this.shadowRoot.getElementById("button-left")
-    const buttonRightElement = this.shadowRoot.getElementById("button-right")
+    if (!this.shadowRoot) return;
 
-    if(this.currentIndex === 0) {
-      buttonLeftElement.style.display = 'none'
+    const buttonLeftElement = this.shadowRoot.getElementById("button-left");
+    const buttonRightElement = this.shadowRoot.getElementById("button-right");
+
+    if (!buttonLeftElement) return;
+    if (!buttonRightElement) return;
+
+    if (this.currentIndex === 0) {
+      buttonLeftElement.style.display = "none";
     } else {
-      buttonLeftElement.style.display = 'block'
+      buttonLeftElement.style.display = "block";
     }
 
-    if(this.currentIndex === this.slotsImageSources.length - 1) {
-      buttonRightElement.style.display = 'none'
+    if (this.currentIndex === this.slotsImageSources.length - 1) {
+      buttonRightElement.style.display = "none";
     } else {
-      buttonRightElement.style.display = 'block'
+      buttonRightElement.style.display = "block";
     }
 
-    if(this.slotsImageSources.length <= 1) {
-      buttonLeftElement.style.display = 'none'
-      buttonRightElement.style.display = 'none'
+    if (this.slotsImageSources.length <= 1) {
+      buttonLeftElement.style.display = "none";
+      buttonRightElement.style.display = "none";
     }
   }
 }

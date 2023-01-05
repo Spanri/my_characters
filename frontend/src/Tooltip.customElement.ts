@@ -44,17 +44,17 @@ const styleTag = `
       }
     }
   </style>
-`
+`;
 
 export class Tooltip extends HTMLElement {
-  shadowRoot: any
-
   constructor() {
     super();
   }
 
   connectedCallback() {
-    this.attachShadow({ mode: 'open' });
+    this.attachShadow({ mode: "open" });
+
+    if (!this.shadowRoot) return;
 
     this.shadowRoot.innerHTML = `
       ${styleTag}
@@ -68,15 +68,17 @@ export class Tooltip extends HTMLElement {
       </div>
     `;
 
-    const tooltipElement = this.shadowRoot.getElementById("tooltip")
-    const tooltipValueElement = this.shadowRoot.getElementById("tooltip-value")
+    const tooltipElement = this.shadowRoot.getElementById("tooltip");
+    const tooltipValueElement = this.shadowRoot.getElementById("tooltip-value");
 
-    if(tooltipElement) {
+    if (tooltipElement) {
       tooltipElement.addEventListener("mouseover", () => {
-        if(tooltipValueElement) {
-          tooltipValueElement.style.marginLeft = `calc(50% - ${tooltipValueElement.getBoundingClientRect().width / 2}px)`
+        if (tooltipValueElement) {
+          tooltipValueElement.style.marginLeft = `calc(50% - ${
+            tooltipValueElement.getBoundingClientRect().width / 2
+          }px)`;
         }
-      })
+      });
     }
   }
 }
