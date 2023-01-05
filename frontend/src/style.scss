@@ -65,32 +65,11 @@ h6 {
   margin: 0;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-
-  @media(max-width: 500px) {
-    padding: 0.5rem 0.5rem 0;
-  }
-}
-
 @font-face {
   font-family: 'font1';
   src: url("fonts/1.woff2") format("woff2"), url("fonts/1.woff") format("woff"), url("fonts/1.eot") format("eot");
   font-weight: normal;
   font-size: 75px;
-}
-
-@font-face {
-  font-family: 'font2';
-  src: url("fonts/2.woff2") format("woff2"), url("fonts/2.woff") format("woff"), url("fonts/2.eot") format("eot");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: 'font3';
-  src: url("fonts/3.woff2") format("woff2"), url("fonts/3.woff") format("woff"), url("fonts/3.eot") format("eot");
-  font-weight: normal;
 }
 
 @font-face {
@@ -105,12 +84,6 @@ h6 {
   font-weight: normal;
 }
 
-@font-face {
-  font-family: 'font8';
-  src: url("fonts/8.ttf");
-  font-weight: normal;
-}
-
 .header {
   max-width: 1200px;
   margin: 0 auto;
@@ -118,6 +91,8 @@ h6 {
 
   &-wrapper {
     background-image: url("images/header-background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     width: 100%;
   }
 
@@ -161,32 +136,96 @@ h6 {
   &__block {
     max-width: 1200px;
     margin: auto;
-  }
 
-  &__description {
-    font-family: font8;
-    font-size: 24px;
-    line-height: 24px;
-    color: white;
-    text-align: center;
-
-    @media(max-width: 500px) {
-      font-size: 16px;
-      line-height: 20px;
-    }
-  }
-
-  &__row {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+  }
 
-    margin-bottom: 2%;
+  &__break {
+    flex: 100%;
+  }
+
+  @media(min-width: 941px) {
+    .header__size_large {
+      display: block;
+    }
+
+    .header__size_small {
+      display: none;
+    }
+  }
+
+  @media(max-width: 940px) {
+    .header__size_large {
+      display: none;
+    }
+
+    .header__size_small {
+      display: block;
+    }
+  }
+
+  &__description {
+    padding: 0 0.5rem;
+    margin-top: 2rem;
+
+    @media(min-width: 941px) {
+      max-width: 48%;
+    }
+
+    @media(max-width: 940px) {
+      width: 100%;
+    }
+
+    &-text {
+      font-family: font5;
+      font-size: 24px;
+      line-height: 24px;
+      color: white;
+      text-align: center;
+
+      @media(max-width: 700px) {
+        font-size: 1.3rem;
+      }
+  
+      @media(max-width: 500px) {
+        font-size: 1rem;
+        line-height: 20px;
+      }
+    }
+
+    &-arrow {
+      padding-top: 1rem;
+      font-size: 56px;
+      line-height: 56px;
+      color: white;
+      text-align: center;
+      transform: rotate(90deg);
+
+      @media(max-width: 700px) {
+        font-size: 48px;
+        line-height: 48px;
+      }
+
+      @media(max-width: 500px) {
+        font-size: 32px;
+        line-height: 32px;
+      }
+    }
   }
 
   &__item {
-    max-width: 24%;
     position: relative;
+
+    @media(min-width: 941px) {
+      max-width: 24%;
+    }
+
+    @media(max-width: 940px) {
+      max-width: 32%;
+    }
 
     &-img {
       max-height: 300px;
@@ -264,10 +303,18 @@ h6 {
       &-title {
         margin: 0.5rem 0 1rem;
         font-size: 2rem;
+
+        @media (max-width: 700px) {
+          font-size: 1.4rem;
+        }
       }
 
       &-text {
         font-size: 1.5rem;
+
+        @media (max-width: 700px) {
+          font-size: 1rem;
+        }
       }
     }
   }
@@ -291,10 +338,18 @@ h6 {
       font-size: 2rem;
       margin-bottom: 1rem;
       text-align: center;
+
+      @media (max-width: 700px) {
+        font-size: 1.4rem;
+      }
     }
 
     &-text {
       font-size: 1.5rem;
+
+      @media (max-width: 700px) {
+        font-size: 1rem;
+      }
     }
   }
 }
@@ -308,20 +363,7 @@ h6 {
   text-align: center;
 }
 
-@media all and (max-width: 768px) {
-  .content__block {
-    margin-left: 15px;
-    margin-right: 15px;
-    font-size: 20px;
-  }
-
-  .content__additional {
-    margin-right: 0;
-    font-size: 20px;
-  }
-}
-
-@media all and (max-width: 992px) {
+@media (max-width: 992px) {
   .content__block {
     margin-left: 15px;
     margin-right: 15px;

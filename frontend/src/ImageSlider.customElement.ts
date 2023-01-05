@@ -96,14 +96,6 @@ export class ImageSlider extends HTMLElement {
     `;
 
     const contentElement = this.shadowRoot.getElementById("content")
-    const contentItems = [...contentElement.children]
-    // contentItems.forEach((contentItem, index) => {
-    //   const rect = contentItem.getBoundingClientRect()
-    //   if(rect.height > this.maxHeight) {
-    //     this.maxHeight = rect.height
-    //   }
-    // })        
-    // contentElement.style.height = this.maxHeight + 'px'
 
     const buttonLeftElement = this.shadowRoot.getElementById("button-left")
     const buttonRightElement = this.shadowRoot.getElementById("button-right")

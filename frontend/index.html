@@ -6,9 +6,6 @@
   <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   <title>Spanri | Персонажи</title>
 </head>
 
@@ -31,43 +28,60 @@
       </div>
 
       <div class="header__block">
-        <div class="header__row">
-          <a class="header__item header__item_rioto" href="#rioto">
+        <div class="header__description header__size_small">
+          <p class="header__description-text">Это мои персонажи. Рисунки сделаны мной.<br />Листай ниже -
+            персонажи сами расскажут о себе :)</p>
+          <div class="header__description-arrow">»</div>
+        </div>
+        <custom-tooltip class="header__item header__item_rioto">
+          <span slot="value">Риото, 22 года</span>
+          <a slot="target" href="#rioto">
             <img class="header__item-layer-img" src="/images/layer1-1.svg" />
-            <img class="header__item-img" src="/images/Rioto/Rioto.png" title="Риото, 22 года" data-toggle="tooltip"
-              data-placement="bottom" />
+            <img class="header__item-img" src="/images/Rioto/Rioto.png" title="Риото, 22 года" />
           </a>
-          <a class="header__item header__item_aeli" href="#aeli">
+        </custom-tooltip>
+        <custom-tooltip class="header__item header__item_aeli">
+          <span slot="value">Аэли, 24 года</span>
+          <a slot="target" href="#aeli">
             <img class="header__item-layer-img" src="/images/layer1-2.svg" />
-            <img class="header__item-img" src="/images/Aeli/Aeli.png" title="Аэли, 24 года" data-toggle="tooltip"
-              data-placement="bottom" />
+            <img class="header__item-img" src="/images/Aeli/Aeli.png" title="Аэли, 24 года" />
           </a>
-          <a class="header__item header__item_vadim" href="#vadim">
+        </custom-tooltip>
+        <custom-tooltip class="header__item header__item_aeli">
+          <span slot="value">Вадим, 38 лет</span>
+          <a slot="target" href="#vadim">
             <img class="header__item-layer-img" src="/images/layer1-3.svg" />
-            <img class="header__item-img" src="/images/Vadim/Vadim.png" title="Вадим, 38 лет" data-toggle="tooltip"
-              data-placement="bottom" />
+            <img class="header__item-img" src="/images/Vadim/Vadim.png" title="Вадим, 38 лет" />
           </a>
-          <a class="header__item header__item_tim" href="#tim">
+        </custom-tooltip>
+        <div class="header__break header__size_small"></div>
+        <custom-tooltip class="header__item header__item_tim">
+          <span slot="value">Тим, 14 лет</span>
+          <a slot="target" href="#tim">
             <img class="header__item-layer-img" src="/images/layer1-4.svg" />
-            <img class="header__item-img" src="/images/Tim/Tim.png" title="Тим, 14 лет" data-toggle="tooltip"
-              data-placement="bottom" />
-
+            <img class="header__item-img" src="/images/Tim/Tim.png" title="Тим, 14 лет" />
           </a>
-        </div>
-
-        <div class="header__row">
-          <a class="header__item header__item_tim" href="#candy">
+        </custom-tooltip>
+        <div class="header__break header__size_large"></div>
+        <custom-tooltip class="header__item header__item_candy">
+          <span slot="value">Кенди, 22 года</span>
+          <a slot="target" href="#candy">
             <img class="header__item-layer-img" src="/images/layer2-1.svg" />
-            <img class="header__item-img" src="/images/Candy/Candy.png" title="Кенди, 22 года" data-toggle="tooltip"
-              data-placement="bottom" />
+            <img class="header__item-img" src="/images/Candy/Candy.png" title="Кенди, 22 года" />
           </a>
-          <p class="header__description">Это мои персонажи.<br />Листай ниже, чтобы узнать больше :)</p>
-          <a class="header__item header__item_richard" href="#richard">
-            <img class="header__item-layer-img" src="/images/layer2-2.svg" />
-            <img class="header__item-img" src="/images/Richard/Richard.png" title="Ричард, 24 года"
-              data-toggle="tooltip" data-placement="bottom" class="img" />
-          </a>
+        </custom-tooltip>
+        <div class="header__description header__size_large">
+          <p class="header__description-text">Это мои персонажи. Рисунки сделаны мной.<br />Листай ниже -
+            персонажи сами расскажут о себе :)</p>
+          <div class="header__description-arrow">»</div>
         </div>
+        <custom-tooltip class="header__item header__item_tim">
+          <span slot="value">Ричард, 24 года</span>
+          <a slot="target" href="#richard">
+            <img class="header__item-layer-img" src="/images/layer2-2.svg" />
+            <img class="header__item-img" src="/images/Richard/Richard.png" title="Ричард, 24 года" />
+          </a>
+        </custom-tooltip>
       </div>
     </div>
   </header>
@@ -231,9 +245,7 @@
     </div>
   </div>
 
-  <footer class="footer"> &copy; Spanri, 2022</footer>
-
-  <div id="app"></div>
+  <footer class="footer"> &copy; <a href="https://t.me/spanri" target="_blank">Spanri</a>, 2023</footer>
 
   <script type="module" src="/src/main.ts"></script>
 </body>
