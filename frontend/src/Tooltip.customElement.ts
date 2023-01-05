@@ -24,10 +24,24 @@ const styleTag = `
   
       background: rgba(0, 117, 129, 0.5);
       color: white;
-      font-size: 0.5rem;
+      font-size: 1.1rem;
       line-height: 1rem;
       border-radius: 1rem;
-      padding: 0.2rem 0.5rem;
+      padding: 0.6rem 1.2rem;
+    }
+
+    @media(max-width: 700px) {
+      .tooltip-value {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+      }
+    }
+
+    @media(max-width: 500px) {
+      .tooltip-value {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.6rem;
+      }
     }
   </style>
 `

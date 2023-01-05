@@ -1,5 +1,9 @@
 const styleTag = `
   <style>
+    * {
+      line-height: 130%;
+    }
+
     .slider {
       position: relative;
       height: 100%;
@@ -10,6 +14,7 @@ const styleTag = `
       top: calc(50% - 36px);
       left: 2%;
       z-index: 2;
+      padding: 0px 16px 3px 14px;
     }
 
     .slider__button-right {
@@ -17,12 +22,12 @@ const styleTag = `
       top: calc(50% - 36px);
       right: 2%;
       z-index: 2;
+      padding: 0px 16px 3px 16px;
     }
 
     .slider__button-left,
     .slider__button-right {
       background: white;
-      padding: 0px 16px;
       border-radius: 50px;
       box-shadow: 0px 0px 15px 0px rgba(34, 60, 80, 0.2);
       font-size: 28px;

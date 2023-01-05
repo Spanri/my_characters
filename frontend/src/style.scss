@@ -52,6 +52,12 @@ body {
   margin: 0;
 }
 
+* {
+  scroll-behavior: smooth !important;
+  scroll-margin-top: 5vh;
+  line-height: 120%;
+}
+
 p {
   margin: 0;
 }
